@@ -1,0 +1,7 @@
+setxkbmap gb
+xmodmap ~/.Xmodmap
+xset b off
+xset r rate 200 30
+gsynaptics-init
+synclient MaxTapMove=2000       
+exec xmonad
