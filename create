@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 this="$(basename $0)"
 dirname=$(dirname $0)
@@ -11,6 +11,7 @@ fi
 for rcfile in $(dirname $0)/*; do
     rcfile_base=$(basename "$rcfile")
     if [ \( "$rcfile_base" != "$this" \) -a \( "${rcfile_base:(-1)}" != "~" \) ]; then
-	echo ln -sf ${cwd}/$rcfile_base ~/$rcfile_base
+	echo $rcfile_base
+	ln -sf ${cwd}/$rcfile_base ~/.$rcfile_base
     fi
 done
