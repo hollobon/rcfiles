@@ -10,10 +10,12 @@ else
     cwd=$(pwd)/$(dirname $0)
 fi
 
-for rcfile in $(dirname $0)/*; do
+for rcfile in $cwd/* $cwd/host/$(hostname)/*; do
     rcfile_base=$(basename "$rcfile")
-    if [ \( "$rcfile_base" != "$this" \) -a \( "${rcfile_base:(-1)}" != "~" \) ]; then
-	echo $rcfile_base
-	ln -sf ${cwd}/$rcfile_base ~/.$rcfile_base
+    if [ \( -f $rcfile \) \
+	-a  \( "$rcfile_base" != "$this" \) \
+	-a \( "${rcfile_base:(-1)}" != "~" \) ]; then
+	echo $rcfile
+	ln -sf $(dirname $rcfile)/$rcfile_base ~/.$rcfile_base
     fi
 done
