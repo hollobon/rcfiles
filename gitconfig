@@ -1,0 +1,9 @@
+[user]
+	name = Pete Hollobon
+	email = pete@hollobon.com
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = true
