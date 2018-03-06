@@ -1,9 +1,17 @@
 [user]
-	name = Pete Hollobon
-	email = pete@hollobon.com
+        name = Pete Hollobon
+        email = pete@hollobon.com
 
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = true
+        diff = auto
+        status = auto
+        branch = auto
+        interactive = true
+[alias]
+        s = status
+        d = diff
+        diffs = diff --staged
+        co = checkout
+        stashki = stash --keep-index
+        amend = commit --amend --no-edit
+        diffcsv = diff --word-diff-regex="[^[:space:],]+"
